@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEMBER PROFILE PAGE</title>
+</head>
+<body>
+
+  <h2>Member Profile</h2>
+
+<p>ID: <span id="id"></span></p>
+<p>Name: <span id="name"></span></p>
+<p>Club: <span id="club"></span></p>
+<p>Position: <span id="role"></span></p>
+<p>Skills: <span id="tech"></span></p>
+
+<a href ="club.html">Club page</a>
+  
+
+
+
+
+
+  <script>
+    let profile =[
+      {
+        id :"1",
+        name :"Vishnu",
+        club:"Coding Club",
+        role : "Lead Developer",
+        tech : "HTML , CSS , JAVASCRIPT"
+      },
+       {
+      id: "2",
+      name: "Sahil",
+      club: "Robotics Club",
+      role: "Hardware Lead",
+      tech: "Arduino, Sensors"
+    },
+    {
+      id: "3",
+      name: "AbdurRehman",
+      club: "Literary Club",
+      role: "Content Head",
+      tech: "Writing, Editing"
+    },
+    {
+      id: "4",
+      name: "Simran",
+      club: "Design Club",
+      role: "Creative Lead",
+      tech: "Figma, Canva"
+    }
+    ]
+
+    const params = new URLSearchParams(window.location.search);
+    let id = params.get("id");
+
+    let student = profile.find(el=>
+      el.id == id
+    )
+
+    document.querySelector("#id").innerText=  student.id ;
+    document.querySelector("#name").innerText = student.name;
+    document.querySelector('#club').innerText=student.club;
+    document.querySelector("#role").innerText=student.role;
+    document.querySelector("#tech").innerText =student.tech;
+
+  </script>
+</body>
+</html>
